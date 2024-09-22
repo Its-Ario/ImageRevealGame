@@ -100,15 +100,13 @@ class ImageRevealGame:
     def check_answer(self):
         selected = self.selected.get()
         if selected == self.correct_answer:
-            result = "Correct!"
+            messagebox.showinfo("Result", "Correct")
         else:
-            result = "Incorrect!"
+            messagebox.showwarning("Result", "Incorrect")
 
         for rect in self.rectangles:
             self.canvas.itemconfig(rect, state='hidden')
         self.check_btn.config(state=tk.DISABLED)
-        messagebox.showinfo("Result", result)
-
 
 if __name__ == "__main__":
     root = tk.Tk()
